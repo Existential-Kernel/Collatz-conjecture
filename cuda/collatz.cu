@@ -4,40 +4,13 @@
 #include <string.h>
 #include <cstdlib>
 #include <stdlib.h>
-//#include "lib/CLI11.hpp"
+#include "kernel.cu"
+#include "CLI11.hpp"
 
 const std::string ANSIRED = "\x1B[38;2;255;0;0m";
 const std::string ANSITERM = "\x1B[0m";
 
 typedef unsigned long long ULL;
-
-__host__ void Collatz(ULL n) {
-    while (n > 1) {
-        n % 2 == 0 ? n /= 2 : n = n * 3 + 1;
-    }
-    std::cout << 1 << std::endl;
-}
-
-__host__ bool VerifyCollatz(ULL n) {
-    do {
-        n % 2 == 0 ? n /= 2 : n = n * 3 + 1;
-    } while (n != 1)
-
-    return
-}
-
-__device__ void ParallelCollatz() {
-
-}
-
-__host__ CollatzCount(ULL n) {
-    ULL count = 1;
-    while (n != 1) {
-        n % 2 == 0 ? n /= 2 : n = n * 3 + 1;
-        count++;
-    }
-    return count;
-}
 
 ULL n;
 std::string s;
@@ -67,11 +40,9 @@ __host__ static bool IsNumber(char *str) {
 }
 
 __host__ int main(int argc, char *argv[]) {
-    /*
     CLI::App app;
     // Add new options/flags here
     CLI11_PARSE(app, argc, argv);
-    */
 
     if (argc == 1) {
         std::cerr << ANSIRED + "You must provide at least one argument!" + ANSITERM << std::endl;
@@ -82,6 +53,7 @@ __host__ int main(int argc, char *argv[]) {
     } else {
         s = argv[1];
         n = std::stoull(s, nullptr, 0);
+        VerboseCollatz(n);
     }
     return 0;
 }

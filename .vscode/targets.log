@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Dec 30 07:33:26 2021
+# Make data base, printed on Thu Dec 30 07:54:50 2021
 
 # Variables
 
@@ -17,7 +17,9 @@ LC_ALL = C
 # environment
 NO_AT_BRIDGE = 1
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-9f9119dd-2840-4a8d-bba8-c7dbe2638c84.sock
+GJS_DEBUG_OUTPUT = stderr
+# environment
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-8c625cb4-4077-4609-8796-5fd76ebc2d71.sock
 # environment
 VSCODE_CWD = /home/nonce
 # environment
@@ -39,7 +41,7 @@ VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # default
 .VARIABLES := 
 # environment
-PWD = /home/nonce/Documents/Repositories/Collatz
+PWD = /home/nonce/Documents/Repositories/Collatz-conjecture
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
 # environment
@@ -69,7 +71,7 @@ XAUTHORITY = /run/user/1000/gdm/Xauthority
 # makefile
 MAKEFLAGS = pqrR
 # makefile
-CURDIR := /home/nonce/Documents/Repositories/Collatz
+CURDIR := /home/nonce/Documents/Repositories/Collatz-conjecture
 # environment
 VSCODE_PIPE_LOGGING = true
 # environment
@@ -99,7 +101,7 @@ MAKEFILE_LIST := Makefile
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_PID = 3340
+VSCODE_PID = 7230
 # environment
 SDL_VIDEO_MINIMIZE_ON_FOCUS_LOSS = 0
 # environment
@@ -133,6 +135,8 @@ XMODIFIERS = @im=ibus
 # environment
 LD_LIBRARY_PATH = /usr/local/cuda/lib64:/usr/local/cuda/lib64:
 # environment
+GJS_DEBUG_TOPICS = JS ERROR;JS LOG
+# environment
 SHLVL = 0
 # environment
 MAKELEVEL := 0
@@ -147,7 +151,7 @@ MAKEFILES :=
 # automatic
 ^F = $(notdir $^)
 # environment
-INVOCATION_ID = b336e06bb65745709304dcfa81ecc94d
+INVOCATION_ID = 39c1d272f8f641fcad95c923581996c0
 # environment
 VSCODE_LOG_NATIVE = false
 # environment
@@ -171,7 +175,7 @@ GIO_LAUNCHED_DESKTOP_FILE = /usr/share/applications/code.desktop
 # makefile
 .DEFAULT_GOAL := all
 # environment
-SYSTEMD_EXEC_PID = 3302
+SYSTEMD_EXEC_PID = 2525
 # environment
 HISTCONTROL = ignoredups
 # environment
@@ -187,7 +191,7 @@ MANAGERPID = 2197
 # environment
 which_declare = declare -f
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 3340
+GIO_LAUNCHED_DESKTOP_FILE_PID = 7230
 # environment
 SSH_AGENT_PID = 2353
 # environment
@@ -195,7 +199,7 @@ _ = /usr/bin/make
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
-JOURNAL_STREAM = 8:40556
+JOURNAL_STREAM = 8:43422
 # environment
 XDG_SESSION_CLASS = user
 # environment
@@ -225,7 +229,7 @@ XDG_MENU_PREFIX = gnome-
 # environment
 GDMSESSION = gnome
 # variable set hash-table stats:
-# Load=105/1024=10%, Rehash=0, Collisions=4/139=3%
+# Load=107/1024=10%, Rehash=0, Collisions=4/141=3%
 
 # Pattern-specific Variable Values
 
@@ -344,6 +348,6 @@ test:
 # strcache performance: lookups = 42 / hit rate = 40%
 # hash-table stats:
 # Load=25/8192=0%, Rehash=0, Collisions=0/42=0%
-# Finished Make data base on Thu Dec 30 07:33:26 2021
+# Finished Make data base on Thu Dec 30 07:54:50 2021
 
  

@@ -53,9 +53,8 @@ _deps
 *.fatbin
 
 # Custom
-lib
+.hpp
 ideas.md
 test
 collatz
 cpp
-assembly

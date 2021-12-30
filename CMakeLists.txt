@@ -42,40 +42,16 @@ if(APPLE)
                BUILD_RPATH ${CMAKE_CUDA_IMPLICIT_LINK_DIRECTORIES})
 endif()
 
-
-
-
-
-
 export CUDA_HOME=/usr/local/cuda
 export PATH=${CUDA_HOME}/bin:${PATH}
 export LD_LIBRARY_PATH=${CUDA_HOME}/lib64:$LD_LIBRARY_PATH
 
-
-
-
-
-
-
 # https://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/index.html#gpu-compilation
-
-
-
-
-
-
-
-
-
-
-
-
 
 if(NOT DEFINED CLI11_DIR)
 set (CLI11_DIR "/opt/CLI11" CACHE STRING "CLI11 git repository")
 endif()
 include_directories(${CLI11_DIR}/include)
-
 
 include(FetchContent)
 FetchContent_Declare(
