@@ -1,0 +1,6 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/home/nonce/Documents/Repositories/Collatz'
+g++ -o ./cpp/collatz -std=c++11 ./cpp/mainframe.cpp
+.//collatz 
+make: Leaving directory '/home/nonce/Documents/Repositories/Collatz'
+ 

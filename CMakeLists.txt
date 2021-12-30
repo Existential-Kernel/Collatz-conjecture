@@ -9,15 +9,35 @@ add_executable(collatz collatz.cu)
 
 target_compile_features(collatz PUBLIC cxx_std_11)
 
+if (NOT CMAKE_CUDA_COMPILER)
+  message(FATAL_ERROR "CUDA not found. 
+CUDA support will not be compiled.
+To install CUDA, please visit this link:
+
+https://developer.nvidia.com/cuda-downloads
+
+")
+else()
+  enable_language(CUDA)
+  set(CMAKE_CUDA_FLAGS_DEBUG "")
+  set(CMAKE_CUDA_FLAGS_RELEASE "")
+  set(CMAKE_CUDA_FLAGS_RELWITHDEBINFO "")
+  set(CMAKE_CUDA_FLAGS_RELWITHDEBINFOPORTABLE "")
+endif()
+
 set_property(TARGET collatz
     PROPERTY
     BUILD_RPATH ${CMAKE_CUDA_IMPLICIT_LINK_DIRECTORIES}
 )
 
+if(gpu_count EQUAL 1 OR GREATER 1)
+    message(STATUS "Detected the GPU!")
+else()
+    message(FATAL_ERROR "No GPU has been detected, either this is an issue with the code or your GPU is misconfigured.")
+endif()
+
 if(APPLE)
-  # We need to add the path to the driver (libcuda.dylib) as an rpath, 
-  # so that the static cuda runtime can find it at runtime.
-  set_property(TARGET particle_test 
+  set_property(TARGET collatz
                PROPERTY
                BUILD_RPATH ${CMAKE_CUDA_IMPLICIT_LINK_DIRECTORIES})
 endif()
@@ -41,34 +61,6 @@ export LD_LIBRARY_PATH=${CUDA_HOME}/lib64:$LD_LIBRARY_PATH
 
 
 
-
-
-if(gpu_count EQUAL 1 OR GREATER 1)
-    message(STATUS "Detected the GPU!")
-else()
-    message(FATAL_ERROR "No GPU has been detected, either this is an issue with the code or your GPU is misconfigured.")
-endif()
-
-
-
-
-
-
-if (NOT CMAKE_CUDA_COMPILER)
-  message(STATUS "CUDA not found. 
-* CUDA support will not be compiled.
-* To install CUDA, please try:
-*   Debian/Ubuntu: sudo apt-get install nvidia-cuda-toolkit
-*   Fedora: TODO
-*   Homebrew: TODO
-  ")
-else()
-  enable_language(CUDA)
-  set(CMAKE_CUDA_FLAGS_DEBUG "")
-  set(CMAKE_CUDA_FLAGS_RELEASE "")
-  set(CMAKE_CUDA_FLAGS_RELWITHDEBINFO "")
-  set(CMAKE_CUDA_FLAGS_RELWITHDEBINFOPORTABLE "")
-endif()
 
 
 
