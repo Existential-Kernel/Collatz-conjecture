@@ -1,5 +1,5 @@
 <h1 align="center">Collatz conjecture</h1>
-<p>An algorithmic calculator to compute the mathematical Collatz conjecture using the GPU's parallel processing power
+<br>
 
 ## Explaining the Collatz conjecture
 
