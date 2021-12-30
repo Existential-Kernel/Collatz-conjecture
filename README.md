@@ -19,20 +19,11 @@ Using the rule above and starting with 6, we generate the following sequence:
 
 Since it goes down to `1`, the conjecture is true for `6`.
 
-
-
-
-
 If you want to know more about the conjecture, I recommend you watch [this video](https://www.youtube.com/watch?v=094y1Z2wpJg)
 
+- - -
 
 
-
-
-
-
+<!-->
 Since I'm using a 64 bit processor, the maximum number my CPU can compute is `64` bits, or `18,446,744,073,709,551,615`. 
-
-
-
-## Usage
+-->
