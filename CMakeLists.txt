@@ -30,10 +30,12 @@ set_property(TARGET collatz
     BUILD_RPATH ${CMAKE_CUDA_IMPLICIT_LINK_DIRECTORIES}
 )
 
-if(gpu_count EQUAL 1 OR GREATER 1)
+if(gpu_count EQUAL 1)
   message(STATUS "Detected the GPU!")
+elseif(gpu_count GREATER 1)
+  message(STATUS "Detected the GPUs!")
 else()
-  message(FATAL_ERROR "No GPU has been detected. Either this is an issue with the code or your GPU is misconfigured.")
+  message(FATAL_ERROR "No GPU has been detected. Either You do not have a GPU or it is misconfigured.")
 endif()
 
 if(APPLE)

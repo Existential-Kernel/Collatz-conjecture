@@ -53,7 +53,7 @@ _deps
 *.fatbin
 
 # Custom
-.hpp
+lib/CLI11.hpp
 ideas.md
 test
 collatz

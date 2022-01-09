@@ -19,11 +19,15 @@ Using the rule above and starting with 6, we generate the following sequence:
 
 Since it goes down to `1`, the conjecture is true for `6`.
 
-If you want to know more about the conjecture, I recommend you watch [this video](https://www.youtube.com/watch?v=094y1Z2wpJg)
+If you want to know more about the conjecture, I recommend you watch [this video](https://www.youtube.com/watch?v=094y1Z2wpJg) by Veritasium, his video is what motivated me to create this project :)
 
 - - -
 
 
 <!--
-Since I'm using a 64 bit processor, the maximum number my CPU can compute is `64` bits, or `18,446,744,073,709,551,615`. 
+
+## Limits of the algorithm
+Since I'm using a 64 bit processor, the maximum number my CPU can compute is `64` bits, or `18,446,744,073,709,551,615`.
+
+although the repository description says that the algorithm is "using the GPU's parallel processing power", most of the functions are host functions, meaning they run on the CPU and not the GPU.
 -->
