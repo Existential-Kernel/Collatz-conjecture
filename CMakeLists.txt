@@ -31,20 +31,17 @@ set_property(TARGET collatz
 )
 
 if(gpu_count EQUAL 1 OR GREATER 1)
-    message(STATUS "Detected the GPU!")
+  message(STATUS "Detected the GPU!")
 else()
-    message(FATAL_ERROR "No GPU has been detected, either this is an issue with the code or your GPU is misconfigured.")
+  message(FATAL_ERROR "No GPU has been detected. Either this is an issue with the code or your GPU is misconfigured.")
 endif()
 
 if(APPLE)
   set_property(TARGET collatz
-               PROPERTY
-               BUILD_RPATH ${CMAKE_CUDA_IMPLICIT_LINK_DIRECTORIES})
+    PROPERTY
+    BUILD_RPATH ${CMAKE_CUDA_IMPLICIT_LINK_DIRECTORIES}
+  )
 endif()
-
-export CUDA_HOME=/usr/local/cuda
-export PATH=${CUDA_HOME}/bin:${PATH}
-export LD_LIBRARY_PATH=${CUDA_HOME}/lib64:$LD_LIBRARY_PATH
 
 # https://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/index.html#gpu-compilation
 
