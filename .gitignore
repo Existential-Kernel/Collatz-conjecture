@@ -54,8 +54,8 @@ _deps
 
 # Custom
 lib/CLI11.hpp
+executables/
 ideas.md
 test
-collatz
 cpp
 .vscode

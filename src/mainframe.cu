@@ -7,6 +7,11 @@
 #include <functional>
 #include <algorithm>
 #include <iterator>
+
+#include <bit>
+#include <bitset>
+#include <cstdint>
+
 #include "kernel.cu"
 #include "defs.hpp"
 #include "../lib/CLI11.hpp"
@@ -42,10 +47,10 @@ __host__ static void PrintResult(bool result, double time, ULL n, bool milli) {
 }
 
 __host__ static bool IsOverflow(ULL n) {
-    if (n > (ULL_max - 1)) {
-        return true;
+    if (n < (ULL_max - 1)) {
+        return false;
     } else { 
-        return false; 
+        return true; 
     }
 }
 
@@ -75,7 +80,8 @@ __host__ static bool IsNumber(char *str) {
 }
 
 __host__ int main(int argc, char *argv[]) {
-    
+    std::cout.sync_with_stdio(false);
+
     /*
     CLI::App app;
     bool my_flag{false};

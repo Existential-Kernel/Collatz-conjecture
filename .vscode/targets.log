@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Dec 30 07:54:50 2021
+# Make data base, printed on Wed Feb 16 16:56:11 2022
 
 # Variables
 
@@ -17,17 +17,21 @@ LC_ALL = C
 # environment
 NO_AT_BRIDGE = 1
 # environment
-GJS_DEBUG_OUTPUT = stderr
+LMOD_SETTARG_FULL_SUPPORT = no
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-8c625cb4-4077-4609-8796-5fd76ebc2d71.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-e40c0394-07df-49c3-be35-a0508b6c7df0.sock
 # environment
 VSCODE_CWD = /home/nonce
 # environment
 WINDOWPATH = 2
 # environment
+NVM_DIR = /home/nonce/.nvm
+# environment
 GDM_LANG = en_GB.UTF-8
 # default
 MAKE_COMMAND := make
+# environment
+LMOD_ROOT = /usr/share/lmod
 # environment
 define BASH_FUNC_which%%
 () {  ( alias;
@@ -41,7 +45,7 @@ VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # default
 .VARIABLES := 
 # environment
-PWD = /home/nonce/Documents/Repositories/Collatz-conjecture
+PWD = /home/nonce/Documents/Repositories/Collatz-conjecture/Collatz-conjecture
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
 # environment
@@ -59,7 +63,9 @@ VSCODE_LOG_STACK = false
 # automatic
 %F = $(notdir $%)
 # environment
-VSCODE_CODE_CACHE_PATH = /home/nonce/.config/Code/CachedData/899d46d82c4c95423fb7e10e68eba52050e30ba3
+NVM_INC = /home/nonce/.nvm/versions/node/v16.13.2/include/node
+# environment
+VSCODE_CODE_CACHE_PATH = /home/nonce/.config/Code/CachedData/f80445acd5a3dadef24aa209168452a3d97cc326
 # environment
 LANG = C
 # environment
@@ -68,14 +74,23 @@ XAUTHORITY = /run/user/1000/gdm/Xauthority
 .LOADED := 
 # default
 .INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
+# environment
+LMOD_CMD = /usr/share/lmod/lmod/libexec/lmod
 # makefile
 MAKEFLAGS = pqrR
 # makefile
-CURDIR := /home/nonce/Documents/Repositories/Collatz-conjecture
+CURDIR := /home/nonce/Documents/Repositories/Collatz-conjecture/Collatz-conjecture
+# environment
+define BASH_FUNC_module%%
+() {  eval $($LMOD_CMD bash "$@") && eval $(${LMOD_SETTARG_CMD:-:} -s sh)
+}
+endef
 # environment
 VSCODE_PIPE_LOGGING = true
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+# environment
+LMOD_DIR = /usr/share/lmod/lmod/libexec
 # environment
 LESSOPEN = ||/usr/bin/lesspipe.sh %s
 # automatic
@@ -87,13 +102,15 @@ SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # default
 .SHELLFLAGS := -c
 # environment
+NVM_BIN = /home/nonce/.nvm/versions/node/v16.13.2/bin
+# environment
 HISTSIZE = 1000
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # environment
 XDG_SESSION_DESKTOP = gnome
 # environment
-VSCODE_CRASH_REPORTER_START_OPTIONS = {"companyName":"Microsoft","productName":"VSCode","submitURL":"appcenter://code?aid=fba07a4d-84bd-4fc8-a125-9640fc8ce171&uid=77d1cc89-0a49-4878-9b8f-f72aafebc424&iid=77d1cc89-0a49-4878-9b8f-f72aafebc424&sid=77d1cc89-0a49-4878-9b8f-f72aafebc424","uploadToServer":true}
+VSCODE_CRASH_REPORTER_START_OPTIONS = {"companyName":"Microsoft","productName":"VSCode","submitURL":"appcenter://code?aid=fba07a4d-84bd-4fc8-a125-9640fc8ce171&uid=d8dbec1b-9966-4cd7-be68-bbf770c2b035&iid=d8dbec1b-9966-4cd7-be68-bbf770c2b035&sid=d8dbec1b-9966-4cd7-be68-bbf770c2b035","uploadToServer":true}
 # makefile (from 'Makefile', line 1)
 MAKEFILE_LIST := Makefile
 # automatic
@@ -101,7 +118,7 @@ MAKEFILE_LIST := Makefile
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_PID = 7230
+VSCODE_PID = 7135
 # environment
 SDL_VIDEO_MINIMIZE_ON_FOCUS_LOSS = 0
 # environment
@@ -109,11 +126,15 @@ XDG_SESSION_TYPE = x11
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # environment
-SESSION_MANAGER = local/unix:@/tmp/.ICE-unix/2500,unix/unix:/tmp/.ICE-unix/2500
+SESSION_MANAGER = local/unix:@/tmp/.ICE-unix/2887,unix/unix:/tmp/.ICE-unix/2887
 # automatic
 *F = $(notdir $*)
 # makefile (from 'Makefile', line 1)
 NCC = nvcc
+# environment
+MANPATH = /home/nonce/.nvm/versions/node/v16.13.2/share/man:/usr/share/lmod/lmod/share/man:
+# environment
+MODULEPATH = /etc/modulefiles:/usr/share/modulefiles:/usr/share/modulefiles/Linux:/usr/share/modulefiles/Core:/usr/share/lmod/lmod/modulefiles/Core
 # environment
 CHROME_DESKTOP = code-url-handler.desktop
 # environment
@@ -122,6 +143,11 @@ DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
 <D = $(patsubst %/,%,$(dir $<))
 # environment
 VSCODE_NLS_CONFIG = {"locale":"en-gb","availableLanguages":{},"_languagePackSupport":true}
+# environment
+define BASH_FUNC_ml%%
+() {  eval $($LMOD_DIR/ml_cmd "$@")
+}
+endef
 # environment
 BREAKPAD_DUMP_LOCATION = /home/nonce/.config/Code/exthost Crash Reports
 # default
@@ -135,23 +161,25 @@ XMODIFIERS = @im=ibus
 # environment
 LD_LIBRARY_PATH = /usr/local/cuda/lib64:/usr/local/cuda/lib64:
 # environment
-GJS_DEBUG_TOPICS = JS ERROR;JS LOG
-# environment
 SHLVL = 0
 # environment
 MAKELEVEL := 0
 # default
 MAKE = $(MAKE_COMMAND)
 # environment
-PATH = /usr/local/cuda/bin:/usr/local/cuda/bin:/home/nonce/.local/bin:/home/nonce/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/var/lib/snapd/snap/bin
+PATH = /usr/local/cuda/bin:/home/nonce/.nvm/versions/node/v16.13.2/bin:/usr/local/cuda/bin:/home/nonce/.local/bin:/home/nonce/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/var/lib/snapd/snap/bin
 # environment
 MOZ_GMP_PATH = /usr/lib64/mozilla/plugins/gmp-gmpopenh264/system-installed
 # default
 MAKEFILES := 
+# environment
+MODULESHOME = /usr/share/lmod/lmod
 # automatic
 ^F = $(notdir $^)
 # environment
-INVOCATION_ID = 39c1d272f8f641fcad95c923581996c0
+LMOD_sys = Linux
+# environment
+INVOCATION_ID = efcde60443af435e8a2ef2e2deda2a70
 # environment
 VSCODE_LOG_NATIVE = false
 # environment
@@ -172,10 +200,14 @@ GNUMAKEFLAGS :=
 LOGNAME = nonce
 # environment
 GIO_LAUNCHED_DESKTOP_FILE = /usr/share/applications/code.desktop
+# environment
+BASH_ENV = /usr/share/lmod/lmod/init/bash
 # makefile
 .DEFAULT_GOAL := all
 # environment
-SYSTEMD_EXEC_PID = 2525
+SYSTEMD_EXEC_PID = 4450
+# environment
+MODULEPATH_ROOT = /usr/share/modulefiles
 # environment
 HISTCONTROL = ignoredups
 # environment
@@ -187,19 +219,21 @@ USER = nonce
 # default
 MAKE_VERSION := 4.3
 # environment
-MANAGERPID = 2197
+MANAGERPID = 1982
 # environment
 which_declare = declare -f
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 7230
+GIO_LAUNCHED_DESKTOP_FILE_PID = 7135
 # environment
-SSH_AGENT_PID = 2353
+SSH_AGENT_PID = 2643
 # environment
 _ = /usr/bin/make
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
-JOURNAL_STREAM = 8:43422
+NVM_CD_FLAGS = 
+# environment
+JOURNAL_STREAM = 8:83024
 # environment
 XDG_SESSION_CLASS = user
 # environment
@@ -211,13 +245,15 @@ QT_IM_MODULE = ibus
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-VSCODE_IPC_HOOK = /run/user/1000/vscode-56c17cb2-1.63.2-main.sock
+VSCODE_IPC_HOOK = /run/user/1000/vscode-56c17cb2-1.64.2-main.sock
 # default
 .RECIPEPREFIX := 
 # automatic
 <F = $(notdir $<)
 # default
 SUFFIXES := 
+# environment
+LMOD_PKG = /usr/share/lmod/lmod
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync check-symlink guile load
 # makefile (from 'Makefile', line 2)
@@ -227,9 +263,11 @@ CUDA_HOME = /usr/local/cuda
 # environment
 XDG_MENU_PREFIX = gnome-
 # environment
+LMOD_VERSION = 8.4.23
+# environment
 GDMSESSION = gnome
 # variable set hash-table stats:
-# Load=107/1024=10%, Rehash=0, Collisions=4/141=3%
+# Load=123/1024=12%, Rehash=0, Collisions=6/157=4%
 
 # Pattern-specific Variable Values
 
@@ -237,7 +275,7 @@ GDMSESSION = gnome
 
 # Directories
 
-# . (device 38, inode 33383): 15 files, no impossibilities.
+# . (device 39, inode 24912): 15 files, no impossibilities.
 
 # 15 files, no impossibilities in 1 directories.
 
@@ -252,23 +290,24 @@ exec:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 21):
-	./$(DIR)/collatz $(IN)
+#  recipe to execute (from 'Makefile', line 20):
+	./$(DIR)/$(FILE)
 
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2021-12-30 07:08:06.38222897
+#  Last modified 2022-01-13 18:23:28.702051281
 #  File has been updated.
 #  Successfully updated.
 
 nvcc:
+#  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
-#  Modification time never checked.
+#  File does not exist.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 16):
-	$(NCC) -o ./cuda/collatz -std=c++11 ./cuda/collatz.cu
-	make exec DIR=cuda
+	$(NCC) -o ./executables/gpu ./src/mainframe.cu
+	make exec DIR=executables FILE=gpu
 
 # Not a target:
 .DEFAULT:
@@ -283,9 +322,16 @@ all: build exec
 #  File does not exist.
 #  File has been updated.
 #  Needs to be updated (-q is set).
+ 
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/4=0%
- 
+
+x:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 23):
+	./executables/mainframe $(IN)
 
 build:
 #  Phony target (prerequisite of .PHONY).
@@ -313,15 +359,16 @@ build:
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=2/12=17%
 #  recipe to execute (from 'Makefile', line 9):
-	$(CC) -o ./cpp/collatz -std=c++11 ./cpp/mainframe.cpp
+	$(CC) -o ./cpp/collatz -std=c++20 ./cpp/mainframe.cpp
 
 test:
+#  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
-#  Modification time never checked.
+#  File does not exist.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 12):
-	$(CC) -o ./cpp/collatz -std=c++11 ./test.cpp
-	make exec DIR=cpp
+	$(CC) -o ./cpp/test -std=c++20 ./cpp/test.cpp
+	make exec DIR=cpp FILE=testground
 
 # Not a target:
 .SUFFIXES:
@@ -329,25 +376,25 @@ test:
 #  Modification time never checked.
 #  File has not been updated.
 
-.PHONY: all build exec
+.PHONY: all build exec test nvcc
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
 # files hash-table stats:
-# Load=9/1024=1%, Rehash=0, Collisions=0/28=0%
+# Load=10/1024=1%, Rehash=0, Collisions=0/33=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 25 / storage = 193 B / avg = 7 B
-# current buf: size = 8162 B / used = 193 B / count = 25 / avg = 7 B
+# strcache buffers: 1 (0) / strings = 26 / storage = 197 B / avg = 7 B
+# current buf: size = 8162 B / used = 197 B / count = 26 / avg = 7 B
 
-# strcache performance: lookups = 42 / hit rate = 40%
+# strcache performance: lookups = 46 / hit rate = 43%
 # hash-table stats:
-# Load=25/8192=0%, Rehash=0, Collisions=0/42=0%
-# Finished Make data base on Thu Dec 30 07:54:50 2021
+# Load=26/8192=0%, Rehash=0, Collisions=0/46=0%
+# Finished Make data base on Wed Feb 16 16:56:11 2022
 
  
