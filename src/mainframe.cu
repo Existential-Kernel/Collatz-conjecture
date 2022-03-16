@@ -104,7 +104,8 @@ __host__ int main(int argc, char *argv[]) {
             // TODO: fix the CLI arguments and parameters
             auto start = std::chrono::high_resolution_clock::now();
 
-            VerboseCollatz(n);
+            std::cout << VerifyCollatz(n) << std::endl;
+            // VerboseCollatz(n);
 
             auto finish = std::chrono::high_resolution_clock::now();
             elapsed = finish - start;
